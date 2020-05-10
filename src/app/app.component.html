@@ -1,0 +1,44 @@
+<div class = "container">
+<br>
+  <mat-toolbar color="primary" class="top-toolbar">
+    <mat-toolbar-row>
+        <mat-icon class="top-icon">flight_takeoff</mat-icon>
+      <span class="span-title">latajtanio.pl</span>
+      <span class="spacer"></span>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <ng-container *ngIf="userService.user!==undefined; else notLoggedIn">
+            <ng-container *ngIf="authority==='admin'">
+            <button mat-button class="span-menu" [routerLink]="['/admin']">Admin panel</button>
+          <mat-icon class="top-icon" [routerLink]="['/admin']" title="Admin">settings</mat-icon>
+        </ng-container>
+        <button mat-button class="span-menu" [routerLink]="['/profil']">Profile</button>
+        <mat-icon class="top-icon" [routerLink]="['/profil']" title="Profil">account_circle</mat-icon>
+        <button mat-button class="span-menu" (click)="logout()" [routerLink]="['/search']">Logout</button>
+        <mat-icon class="top-icon" (click)="logout()" title="Wyloguj się">exit_to_app</mat-icon>
+      </ng-container>
+
+      <button mat-button class="span-menu" (click)="this.flightSearchService.clearArrays()" [routerLink]="['/search']">Search</button>
+       <mat-icon class="top-icon" (click)="this.flightSearchService.clearArrays()" [routerLink]="['/search']" title="Wyszukaj lot">search</mat-icon>
+       <ng-container *ngIf="userService.user!==undefined">
+       <span class="spacer"></span>
+       <span class="span-hello">You are logged as {{info.username}}!</span>
+       </ng-container>
+
+       <ng-template #notLoggedIn>
+          <button mat-button class="span-menu" [routerLink]="['/signup']">Register</button>
+          <mat-icon class="top-icon" [routerLink]="['/signup']" title="Zarejestruj się">how_to_reg</mat-icon>
+          <button mat-button class="span-menu" [routerLink]="['/auth/login']">Login</button>
+          <mat-icon class="top-icon" [routerLink]="['/auth/login']" title="Zaloguj się">vpn_key</mat-icon>
+
+         </ng-template>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+    <router-outlet></router-outlet>
+
+
+
+</div>

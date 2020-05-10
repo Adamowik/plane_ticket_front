@@ -1,0 +1,47 @@
+<br>
+<ng-container *ngIf="compareDates(); else goodDate">
+<p>Wrong date</p>
+</ng-container>
+
+<ng-template #goodDate>
+<ng-container *ngIf="this.flightSearchService.flights.length>0; else emptyList">
+<div class="container">
+    <br>
+    <h2>Flight search results:</h2>
+      <table mat-table style="width: 100%; height: 4em" class="mat-elevation-z1">
+          <tr>
+              <th>Depart</th>
+              <th>Arrive</th>
+              <th>Departure date</th>
+              <th>Departure hour</th>
+              <th>Arrival date</th>
+              <th>Arrival hour</th>
+              <th>Price</th>
+              <th>Free places</th>
+            </tr>
+            <tr *ngFor="let flight of this.flightSearchService.flights">
+                <td>{{flight.connection.departureAirport.airportName}}</td>
+                <td>{{flight.connection.arrivalAirport.airportName}}</td>
+                <td>{{flight.departureDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{flight.departureTime}}</td>
+                <td>{{flight.arrivalDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{flight.arrivalTime}}</td>
+                <td>{{flight.ticketCost*this.flightSearchService.category}}</td>
+                <td>{{flightSearchService.getFreeSeatsInCategory(flight.flightID)}}</td>
+                <td *ngIf="this.flightSearchService.getFreeSeatsInCategory(flight.flightID) >= this.flightSearchService.getHowManyPassengers(flight.flightID)">
+                  <button mat-raised-button color = "primary" *ngIf="this.userService.getUser()!==undefined; else guest" (click) = "this.flightSearchService.getFlight(flight.flightID)" (click)="this.flightSearchService.getSeatsByFlight(flight.flightID)"
+                 [routerLink]="['/chooseplace']">
+                 Buy Tickets
+                </button>
+                <ng-template #guest><button mat-raised-button color="primary" (click) = "this.flightSearchService.getFlight(flight.flightID)" (click)="this.flightSearchService.getSeatsByFlight(flight.flightID)"
+                  [routerLink]="['/guestview']">Show Places</button></ng-template>
+              </td>
+            </tr>
+            </table>
+</div>
+</ng-container>
+
+<ng-template #emptyList>
+<p>No flights found</p>
+</ng-template>
+</ng-template>

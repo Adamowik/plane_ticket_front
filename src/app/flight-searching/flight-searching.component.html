@@ -1,0 +1,80 @@
+<br>
+    <div class="row">
+      <div class="col">
+          <mat-form-field>
+            <input
+            [(ngModel)]="this.flightSearchService.departure"
+            matInput placeholder="Departure airport" required [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+              <input
+              [(ngModel)]="this.flightSearchService.arrival"
+               matInput placeholder="Arrival airport" required [formControl]="myControl" [matAutocomplete]="auto">
+               <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+          <br>
+
+
+<mat-form-field>
+  <mat-select placeholder="Choose category" [(value)]="this.flightSearchService.category" required>
+    <mat-option value=2>First Class</mat-option>
+    <mat-option value=1>Second Class</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+
+<mat-form-field>
+  <mat-select placeholder="How many passengers" [(value)]="this.flightSearchService.howManyPassengers" required>
+    <mat-option value=1>1</mat-option>
+    <mat-option value=2>2</mat-option>
+    <mat-option value=3>3</mat-option>
+    <mat-option value=4>4</mat-option>
+    <mat-option value=5>5</mat-option>
+    <mat-option value=6>6</mat-option>
+    <mat-option value=7>7</mat-option>
+    <mat-option value=8>8</mat-option>
+    <mat-option value=9>9</mat-option>
+    <mat-option value=10>10</mat-option>
+    <mat-option value=11>11</mat-option>
+    <mat-option value=12>12</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+          <mat-form-field>
+              <input
+              [(ngModel)]="this.flightSearchService.dateDeparture"
+              matInput [matDatepicker]="picker" placeholder="Choose departure date" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          <br>
+
+
+
+          <button mat-raised-button color = "primary" (click)="this.flightSearchService.getFlights()" [routerLink]="['./results']">Search</button>
+
+        </div>
+
+<div class="col">
+  <img class="plane-image" src="assets/images/plane.png" width="773" height="255">
+</div>
+
+          </div>
+
+
+
+
+
+          <router-outlet></router-outlet>
