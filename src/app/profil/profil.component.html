@@ -1,0 +1,44 @@
+<mat-toolbar class="top-toolbar">
+    <mat-toolbar-row>
+        <button mat-button class="span-menu" [routerLink]="['./editprofil']">Edit profile</button>
+        <mat-icon class="top-icon" [routerLink]="['./editprofil']">settings</mat-icon>
+      <button mat-button class="span-menu" [routerLink]="['./showtickets']">Show tickets</button>
+      <mat-icon class="top-icon" [routerLink]="['./showtickets']">search</mat-icon>
+    </mat-toolbar-row>
+    </mat-toolbar>
+
+
+<div class="container">
+  <br>
+  <table style="width: 100%; height: 3em" mat-table class="mat-elevation-z12">
+        <tr>
+            <th>Username:</th>
+            <br>
+            <td>{{userService.getUser().username}}</td>
+          </tr>
+     <tr>
+       <th>Name:</th>
+       <br>
+       <td>{{userService.getUser().name}}</td>
+     </tr>
+     <tr>
+       <th>Surname:</th>
+       <br>
+       <td>{{userService.getUser().surname}}</td>
+     </tr>
+     <tr>
+       <th>Email:</th>
+       <br>
+       <td>{{userService.getUser().email}}</td>
+     </tr>
+     <tr>
+       <th>Phone Number:</th>
+       <br>
+       <td>{{userService.getUser().phoneNumber}}</td>
+     </tr>
+
+    </table>
+
+  </div>
+
+  <router-outlet></router-outlet>

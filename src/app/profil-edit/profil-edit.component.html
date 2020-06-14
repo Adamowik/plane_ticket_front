@@ -1,0 +1,56 @@
+<div class="container">
+
+
+    <br>
+    <mat-form-field>
+      <input
+      [(ngModel)]="this.tempName"
+      matInput placeholder="{{dictionary.name}}"
+      [formControl]="nameFormControl"
+       [errorStateMatcher]="matcher" required>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name demanded
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field>
+        <input
+        [(ngModel)]="this.tempSurname"
+         matInput placeholder="{{dictionary.surname}}"
+        [formControl]="surnameFormControl"
+         [errorStateMatcher]="matcher" required>
+         <mat-error *ngIf="surnameFormControl.hasError('required')">
+            Surname demanded
+          </mat-error>
+      </mat-form-field>
+    <br>
+    <br>
+  <mat-form-field>
+  <input
+  [(ngModel)]="this.tempPhoneNumber"
+   matInput placeholder="{{dictionary.phoneNumber}}" [formControl]="phoneNumberFormControl"
+   [errorStateMatcher]="matcher" required>
+   <mat-error *ngIf="phoneNumberFormControl.hasError('minlength') || phoneNumberFormControl.hasError('maxlength') && !phoneFormControl.hasError('required')">
+    Enter valid phone number
+  </mat-error>
+  <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+    Phone number demanded
+  </mat-error>
+</mat-form-field>
+<br>
+
+<button mat-button mat-raised-button color="primary" (click)="clicked=true" (click)="updateUserDetails(user)"
+[disabled]="phoneNumberFormControl.invalid || nameFormControl.invalid || surnameFormControl.invalid || clicked">Make changes</button>
+<br>
+
+<div class="container" *ngIf="clicked">
+  <br>
+  Are You sure to make changes
+  <br>
+<button mat-raised-button color="primary" (click)="flightSearchService.updateUser(user)"[routerLink]="['/profil']">
+  Yes
+</button>
+</div>
+
+</div>

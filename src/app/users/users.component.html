@@ -1,0 +1,23 @@
+<div class="container">
+  <table style="width: 100%; height: 3em" mat-table class="mat-elevation-z12">
+   <tr>
+     <th>ID</th>
+     <th>Username</th>
+     <th>Name</th>
+      <th>Surname</th>
+     <th>Eail</th>
+     <th>Phone number</th>
+   </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.surname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phoneNumber}}</td>
+    </tr>
+
+  </table>
+</div>
+
+

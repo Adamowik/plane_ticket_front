@@ -7,6 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminComponent } from './admin/admin.component';
+import { UsersComponent } from './users/users.component';
+import { FlightsComponent } from './flights/flights.component';
+import { ConnectionsComponent } from './connections/connections.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -21,28 +25,49 @@ import { FlightSearchingComponent } from './flight-searching/flight-searching.co
 import { ChoosePlaceComponent } from './choose-place/choose-place.component';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { BuyingFormComponent } from './buying-form/buying-form.component';
+import { ProfilComponent } from './profil/profil.component';
 import { GuestViewPlacesComponent } from './guest-view-places/guest-view-places.component';
 import { FlightSearchResultComponent } from './flight-search-result/flight-search-result.component';
+import { ProfilEditComponent } from './profil-edit/profil-edit.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { LoginSecurityComponent } from './login-security/login.security.component';
+import { RegisterSecurityComponent } from './register-security/register.security.component';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { TicketComponent } from './ticket/ticket.component';
+import { PlanesComponent } from './planes/planes.component';
+import { AddFlightComponent } from './add-flight/add-flight.component';
+import { FlightRemovedComponent } from './flight-removed/flight-removed.component';
+import { FlightAddedComponent } from './flight-added/flight-added.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
+    UsersComponent,
+    FlightsComponent,
+    ConnectionsComponent,
     FlightSearchingComponent,
     ChoosePlaceComponent,
+    BuyingFormComponent,
+    ProfilComponent,
     GuestViewPlacesComponent,
     FlightSearchResultComponent,
+    ProfilEditComponent,
     TicketsComponent,
     LoginSecurityComponent,
-    TicketComponent
+    RegisterSecurityComponent,
+    TicketComponent,
+    PlanesComponent,
+    AddFlightComponent,
+    FlightRemovedComponent,
+    FlightAddedComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +96,7 @@ import { TicketComponent } from './ticket/ticket.component';
     MatListModule
   ],
   providers: [
-    HttpService, MatDatepickerModule, MatNativeDateModule, FlightSearchService, DatePipe,
+    HttpService, MatDatepickerModule, MatNativeDateModule, FlightSearchService, DatePipe, httpInterceptorProviders,
      UserSecurityService],
   bootstrap: [AppComponent]
 })

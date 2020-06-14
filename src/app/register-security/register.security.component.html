@@ -1,0 +1,123 @@
+<div *ngIf="isSignedUp; else signupForm">
+  Register completed
+</div>
+
+<ng-template #signupForm>
+<div class="row">
+  <div class="col">
+    <br>
+    <mat-form-field>
+      <input
+      [(ngModel)]="form.username"
+      matInput placeholder="{{dictionary.username}}"
+      [formControl]="usernameFormControl"
+       [errorStateMatcher]="matcher" required>
+      <mat-error *ngIf="usernameFormControl.hasError('required')">
+        Login demanded
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field>
+      <input
+      [(ngModel)]="form.name"
+      matInput placeholder="{{dictionary.name}}"
+      [formControl]="nameFormControl"
+       [errorStateMatcher]="matcher" required>
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name demanded
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <mat-form-field>
+        <input
+        [(ngModel)]="form.surname"
+         matInput placeholder="{{dictionary.surname}}"
+        [formControl]="surnameFormControl"
+         [errorStateMatcher]="matcher" required>
+         <mat-error *ngIf="surnameFormControl.hasError('required')">
+            Surname demanded
+          </mat-error>
+      </mat-form-field>
+    <br>
+    <br>
+    <form [formGroup]="emailFormGroup">
+    <mat-form-field>
+      <input
+      [(ngModel)]="form.email"
+       matInput placeholder="{{dictionary.email}}" formControlName="email"
+       [errorStateMatcher]="matcheremail" required>
+       <mat-error *ngIf="emailFormGroup.get('email').hasError('email') && !emailFormGroup.get('email').hasError('required')">
+        Enter valid email
+      </mat-error>
+      <mat-error *ngIf="emailFormGroup.get('email').hasError('required')">
+        Email demanded
+      </mat-error>
+    </mat-form-field>
+  <br>
+  <br>
+  </form>
+  <form [formGroup]="passwordFormGroup">
+  <mat-form-field>
+    <input
+    [(ngModel)]="form.password"
+     matInput placeholder="{{dictionary.password}}" type="password" formControlName="password" required>
+
+     <mat-error *ngIf="passwordFormGroup.hasError('required', 'password')">
+        Password demanded
+      </mat-error>
+
+      <mat-error>
+          Password length
+        </mat-error>
+
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-form-field>
+      <input
+       matInput placeholder="{{dictionary.confirmPassword}}" type="password" formControlName="confirmPassword"
+       [errorStateMatcher]="matcherpass" required>
+
+       <mat-error *ngIf="passwordFormGroup.hasError('notSame')">
+          Passwords not same
+        </mat-error>
+
+    </mat-form-field>
+    <br>
+    <br>
+  </form>
+    <mat-form-field>
+    <input
+    [(ngModel)]="form.phoneNumber"
+     matInput placeholder="{{dictionary.phoneNumber}}" [formControl]="phoneNumberFormControl"
+     [errorStateMatcher]="matcher" required>
+     <mat-error *ngIf="phoneNumberFormControl.hasError('minlength') || phoneNumberFormControl.hasError('maxlength') && !phoneFormControl.hasError('required')">
+      Enter valid phone number
+    </mat-error>
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+      Phone number demanded
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-checkbox [formControl]="statuteFormControl" required>I agree</mat-checkbox>
+  <br>
+  <br>
+  <button mat-raised-button color="primary" [disabled]="passwordFormGroup.invalid || emailFormGroup.invalid || phoneNumberFormControl.invalid || nameFormControl.invalid || surnameFormControl.invalid
+  || statuteFormControl.invalid" (click)="onSubmit()">Register me</button>
+  <br>
+  <div *ngIf="isSignUpFailed" class="alert alert-danger">
+    <br>
+    Register failed
+  </div>
+</div>
+  <div class="col">
+    <img src="assets/images/tickets.png" width="600" height="467">
+  </div>
+  </div>
+</ng-template>
+
+
+
