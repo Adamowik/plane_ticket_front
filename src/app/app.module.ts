@@ -28,6 +28,7 @@ import { CommonModule } from '@angular/common';
 import { BuyingFormComponent } from './buying-form/buying-form.component';
 import { ProfilComponent } from './profil/profil.component';
 import { GuestViewPlacesComponent } from './guest-view-places/guest-view-places.component';
+import { InsuranceComponent } from './insurance/insurance.component';
 import { FlightSearchResultComponent } from './flight-search-result/flight-search-result.component';
 import { ProfilEditComponent } from './profil-edit/profil-edit.component';
 import { TicketsComponent } from './tickets/tickets.component';
@@ -58,6 +59,7 @@ import { FlightAddedComponent } from './flight-added/flight-added.component';
     BuyingFormComponent,
     ProfilComponent,
     GuestViewPlacesComponent,
+    InsuranceComponent,
     FlightSearchResultComponent,
     ProfilEditComponent,
     TicketsComponent,

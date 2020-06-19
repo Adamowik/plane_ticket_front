@@ -7,6 +7,7 @@ import { LoginSecurityComponent } from './login-security/login.security.componen
 import { RegisterSecurityComponent } from './register-security/register.security.component';
 import { ProfilEditComponent } from './profil-edit/profil-edit.component';
 import { FlightSearchResultComponent } from './flight-search-result/flight-search-result.component';
+import { InsuranceComponent } from './insurance/insurance.component';
 import { GuestViewPlacesComponent } from './guest-view-places/guest-view-places.component';
 import { BuyingFormComponent } from './buying-form/buying-form.component';
 import { ChoosePlaceComponent } from './choose-place/choose-place.component';
@@ -35,6 +36,10 @@ const routes: Routes = [  {
       component: FlightSearchResultComponent
     }
   ]
+},
+{
+  path: 'insurance',
+  component: InsuranceComponent
 },
 {
   path: 'guestview',

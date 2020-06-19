@@ -5,6 +5,12 @@
         <mat-icon class="top-icon">flight_takeoff</mat-icon>
       <span class="span-title">latajtanio.pl</span>
       <span class="spacer"></span>
+      <span class="span-hello">{{city}}</span>
+      <span class="span-hello">{{temepature}}°C</span>
+      <button mat-button class="span-menu" (click)="changeLanguage()">Change language</button>
+      <mat-icon class="top-icon" (click)="changeLanguage()" title="Zmien jezyk">language</mat-icon>
+      <button mat-button class="span-menu" (click)="changeTheme()">Change theme</button>
+      <mat-icon class="top-icon" (click)="changeTheme()" title="Zmien motyw">tonality</mat-icon>
     </mat-toolbar-row>
     <mat-toolbar-row>
         <ng-container *ngIf="userService.user!==undefined; else notLoggedIn">
@@ -20,6 +26,9 @@
 
       <button mat-button class="span-menu" (click)="this.flightSearchService.clearArrays()" [routerLink]="['/search']">Search</button>
        <mat-icon class="top-icon" (click)="this.flightSearchService.clearArrays()" [routerLink]="['/search']" title="Wyszukaj lot">search</mat-icon>
+       <button mat-button class="span-menu" [routerLink]="['/insurance']">Insurance</button>
+       <mat-icon class="top-icon" [routerLink]="['/insurance']" title="Ubezpieczenie">local_hospital</mat-icon>
+
        <ng-container *ngIf="userService.user!==undefined">
        <span class="spacer"></span>
        <span class="span-hello">You are logged as {{info.username}}!</span>
