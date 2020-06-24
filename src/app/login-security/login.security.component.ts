@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { HttpService } from './../services/http-service';
 import { UserSecurityService } from './../services/user.security.service';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -33,7 +34,7 @@ export class LoginSecurityComponent implements OnInit {
 
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, public userService: UserSecurityService,
-    private httpService: HttpService) { }
+    private httpService: HttpService, public dictionary: DictionaryService) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {

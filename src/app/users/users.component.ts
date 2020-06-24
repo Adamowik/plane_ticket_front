@@ -1,7 +1,7 @@
 import { HttpService } from '../services/http-service';
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../entities';
-
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +11,7 @@ import { Users } from '../entities';
 export class UsersComponent implements OnInit {
 
   users: Users[] = [];
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, public dictionary: DictionaryService) { }
 
   ngOnInit() {
     this.getUsers();

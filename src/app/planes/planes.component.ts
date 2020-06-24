@@ -1,6 +1,7 @@
 import { HttpService } from './../services/http-service';
 import { Plane } from './../entities';
 import { Component, OnInit } from '@angular/core';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-planes',
@@ -11,7 +12,7 @@ export class PlanesComponent implements OnInit {
 
   planes: Plane[] = [];
 
-  constructor(private httpService: HttpService) { }
+  constructor(public dictionary: DictionaryService, private httpService: HttpService) { }
 
   ngOnInit() {
     this.getPlanes();

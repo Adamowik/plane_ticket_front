@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { Ticket } from './../entities';
 import { HttpService } from './../services/http-service';
 import { UserSecurityService } from './../services/user.security.service';
@@ -12,7 +13,8 @@ export class ProfilComponent implements OnInit {
 
   tickets: Ticket[];
 
-  constructor(public userService: UserSecurityService, private httpService: HttpService) { }
+  constructor(public userService: UserSecurityService, private httpService: HttpService,
+    public dictionary: DictionaryService) { }
 
   ngOnInit() {
   }

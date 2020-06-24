@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { FlightSearchService } from './../services/flight-search.service';
 import { UserSecurityService } from './../services/user.security.service';
 import { Ticket } from './../entities';
@@ -12,7 +13,7 @@ import { HttpService } from '../services/http-service';
 export class TicketsComponent implements OnInit {
 
   constructor(public userService: UserSecurityService, private httpService: HttpService,
-    private flightSearchService: FlightSearchService) { }
+    private flightSearchService: FlightSearchService, public dictionary: DictionaryService) { }
 
   userTickets: Ticket[];
 

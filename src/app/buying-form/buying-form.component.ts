@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { HttpService } from './../services/http-service';
 import { Ticket, Users, Flight } from './../entities';
 import { FlightSearchService } from './../services/flight-search.service';
@@ -14,7 +15,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 export class BuyingFormComponent implements OnInit {
 
   constructor(public flightSearchService: FlightSearchService,
-    public userService: UserSecurityService, private httpService: HttpService) { }
+    public userService: UserSecurityService, private httpService: HttpService, public dictionary: DictionaryService) { }
 
 
   nameFormControl = new FormControl('', [

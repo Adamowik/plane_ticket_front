@@ -1,12 +1,12 @@
 <mat-toolbar class="top-toolbar">
   <mat-toolbar-row>
-      <button mat-button class="span-menu" [routerLink]="['./connections']">Connections</button>
-      <mat-icon class="top-icon" [routerLink]="['./connections']">Compare_arrows</mat-icon>
-    <button mat-button class="span-menu" [routerLink]="['./flights']">Flights</button>
-    <mat-icon class="top-icon" [routerLink]="['./flights']">Flight_takeoff</mat-icon>
-    <button mat-button class="span-menu" [routerLink]="['./planes']">Planes</button>
-    <mat-icon class="top-icon" [routerLink]="['./planes']">Flight</mat-icon>
-  <button mat-button class="span-menu" [routerLink]="['./users']">"Users</button>
+      <button mat-button class="span-menu" [routerLink]="['./connections']">{{dictionary.connections}}</button>
+      <mat-icon class="top-icon" [routerLink]="['./connections']">compare_arrows</mat-icon>
+    <button mat-button class="span-menu" [routerLink]="['./flights']">{{dictionary.flights}}</button>
+    <mat-icon class="top-icon" [routerLink]="['./flights']">flight_takeoff</mat-icon>
+    <button mat-button class="span-menu" [routerLink]="['./planes']">{{dictionary.planes}}</button>
+    <mat-icon class="top-icon" [routerLink]="['./planes']">flight</mat-icon>
+  <button mat-button class="span-menu" [routerLink]="['./users']">{{dictionary.users}}</button>
   <mat-icon class="top-icon" [routerLink]="['./users']">supervised_user_circle</mat-icon>
   </mat-toolbar-row>
   </mat-toolbar>

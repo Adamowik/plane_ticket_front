@@ -3,7 +3,7 @@
 <mat-form-field>
     <input
     [(ngModel)]="departureAirport"
-    matInput placeholder="Departure airport required [formControl]="airportControl" [matAutocomplete]="auto">
+    matInput placeholder="{{dictionary.departureAirport}}" required [formControl]="airportControl" [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredAirportOptions | async" [value]="option">
           {{option}}
@@ -14,7 +14,7 @@
   <mat-form-field>
       <input
       [(ngModel)]="arrivalAirport"
-       matInput placeholder="Arrival airport required [formControl]="airportControl" [matAutocomplete]="auto">
+       matInput placeholder="{{dictionary.arrivalAirport}}" required [formControl]="airportControl" [matAutocomplete]="auto">
        <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let option of filteredAirportOptions | async" [value]="option">
             {{option}}

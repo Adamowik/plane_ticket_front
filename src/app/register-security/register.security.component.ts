@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../auth/auth.service';
@@ -81,7 +82,7 @@ export class RegisterSecurityComponent implements OnInit {
   return pass === confirmPass ? null : { notSame: true };
 }
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, public dictionary: DictionaryService) {
     this.passwordFormGroup = this.formBuilder.group({
       password: ['', [Validators.required, Validators.minLength(9)]],
       confirmPassword: ['']

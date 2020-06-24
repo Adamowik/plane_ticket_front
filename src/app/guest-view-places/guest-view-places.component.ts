@@ -1,5 +1,6 @@
 import { FlightSearchService } from './../services/flight-search.service';
 import { Component, OnInit } from '@angular/core';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-guest-view-places',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestViewPlacesComponent implements OnInit {
 
-  constructor(public flightSearchService: FlightSearchService) { }
+  constructor(public flightSearchService: FlightSearchService, public dictionary: DictionaryService) { }
 
   ngOnInit() {
   }

@@ -1,6 +1,7 @@
 import { Connections } from './../entities';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http-service';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-connections',
@@ -10,7 +11,7 @@ import { HttpService } from '../services/http-service';
 export class ConnectionsComponent implements OnInit {
 
   connections: Array<Connections>;
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, public dictionary: DictionaryService) { }
 
   ngOnInit() {
     this.getConnections();

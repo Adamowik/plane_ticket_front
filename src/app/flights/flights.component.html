@@ -1,17 +1,17 @@
 <div class = "container">
   <br>
-  <button mat-raised-button color="primary" [routerLink]="['../addflight']">Add flight</button>
+  <button mat-raised-button color="primary" [routerLink]="['../addflight']">{{dictionary.addFlight}}</button>
   <table style="width: 100%;" mat-table class="mat-elevation-z12">
    <tr>
      <th>ID</th>
-     <th>Departure airport</th>
-     <th>Arrival airport</th>
-     <th>Departure date</th>
-     <th>Departure hour</th>
-     <th>Arrival date</th>
-     <th>Arrival hour</th>
-     <th>Plane</th>
-     <th>Ticket cost</th>
+     <th>{{dictionary.departureAirport}}</th>
+     <th>{{dictionary.arrivalAirport}}</th>
+     <th>{{dictionary.departureDate}}</th>
+     <th>{{dictionary.departureHour}}</th>
+     <th>{{dictionary.arrivalDate}}</th>
+     <th>{{dictionary.arrivalHour}}</th>
+     <th>{{dictionary.plane}}</th>
+     <th>{{dictionary.ticketCost}}</th>
    </tr>
     <tr *ngFor="let flight of flights" style="height: 3em">
         <td>{{flight.flightID}}</td>
@@ -23,7 +23,7 @@
         <td>{{flight.arrivalTime}}</td>
         <td>{{flight.plane.planeName}}</td>
         <td>{{flight.ticketCost}} zł</td>
-        <td><button mat-raised-button color="warn" [routerLink]="['../flightdeleted']" (click)="deleteFlight(flight)">Delete flight</button></td>
+        <td><button mat-raised-button color="warn" [routerLink]="['../flightdeleted']" (click)="deleteFlight(flight)">{{dictionary.deleteFlight}}</button></td>
     </tr>
   </table>
 </div>

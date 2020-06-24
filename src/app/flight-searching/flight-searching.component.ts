@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-flight-searching',
@@ -20,7 +21,8 @@ export class FlightSearchingComponent implements OnInit {
   allAirports: Airport[] = [];
 
 
-  constructor(private httpService: HttpService, public flightSearchService: FlightSearchService) { }
+  constructor(private httpService: HttpService, public flightSearchService: FlightSearchService,
+    public dictionary: DictionaryService) { }
 
   ngOnInit() {
     this.flightSearchService.getAllSeats();

@@ -1,6 +1,7 @@
 import { UserSecurityService } from './../services/user.security.service';
 import { Component, OnInit } from '@angular/core';
 import { FlightSearchService } from '../services/flight-search.service';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component ({
   selector: 'app-flight-search-result',
@@ -11,7 +12,8 @@ export class FlightSearchResultComponent implements OnInit {
 
   currentDate: Date;
 
-  constructor(public flightSearchService: FlightSearchService, public userService: UserSecurityService) {
+  constructor(public flightSearchService: FlightSearchService, public userService: UserSecurityService,
+    public dictionary: DictionaryService) {
       this.currentDate = new Date();
     }
 

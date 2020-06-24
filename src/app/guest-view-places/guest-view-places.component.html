@@ -9,11 +9,11 @@
                 </td>
 
                 <ng-template #notThisCategory>
-                  <button mat-fab disabled>Other class</button>
+                  <button mat-fab disabled>{{dictionary.otherClass}}</button>
                 </ng-template>
 
                   <ng-template #seatOccuped>
-                      <button mat-fab color="warn">Occupied</button>
+                      <button mat-fab color="warn">{{dictionary.occuped}}</button>
                   </ng-template>
                 </ng-container>
 
@@ -35,11 +35,11 @@
                       </td>
 
                       <ng-template #notThisCategory>
-                        <button mat-fab disabled>Other class</button>
+                        <button mat-fab disabled>{{dictionary.otherClass}}</button>
                       </ng-template>
 
                         <ng-template #seatOccuped>
-                            <button mat-fab color="warn">Occupied</button>
+                            <button mat-fab color="warn">{{dictionary.occuped}}</button>
                         </ng-template>
                       </ng-container>
 
@@ -61,11 +61,11 @@
                         </td>
 
                         <ng-template #notThisCategory>
-                          <button mat-fab disabled>Other class</button>
+                          <button mat-fab disabled>{{dictionary.otherClass}}</button>
                         </ng-template>
 
                           <ng-template #seatOccuped>
-                              <button mat-fab color="warn">Occupied</button>
+                              <button mat-fab color="warn">{{dictionary.occuped}}</button>
                           </ng-template>
                         </ng-container>
 
@@ -87,11 +87,11 @@
                           </td>
 
                           <ng-template #notThisCategory>
-                            <button mat-fab disabled>Other class</button>
+                            <button mat-fab disabled>{{dictionary.otherClass}}</button>
                           </ng-template>
 
                             <ng-template #seatOccuped>
-                                <button mat-fab color="warn">Occupied</button>
+                                <button mat-fab color="warn">{{dictionary.occuped}}</button>
                             </ng-template>
                           </ng-container>
 
@@ -103,7 +103,7 @@
             </table>
           </div>
  <div class="col">
-          <p class="login">Now You can't <a [routerLink]="['/auth/login']">Login</a></p>
+          <p class="login">{{dictionary.nowYouCant}} <a [routerLink]="['/auth/login']">{{dictionary.loginLowerCase}}</a></p>
 
         </div>
 

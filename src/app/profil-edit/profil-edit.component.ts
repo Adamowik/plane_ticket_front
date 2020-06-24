@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { FlightSearchService } from './../services/flight-search.service';
 import { Users } from './../entities';
 import { Component, OnInit } from '@angular/core';
@@ -36,7 +37,7 @@ export class ProfilEditComponent implements OnInit {
 
   matcher = new ErrorStateMatcher();
   constructor(private httpService: HttpService, public userService: UserSecurityService,
-     public flightSearchService: FlightSearchService) { }
+     public flightSearchService: FlightSearchService, public dictionary: DictionaryService) { }
 
 
   ngOnInit() {

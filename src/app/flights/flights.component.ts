@@ -1,6 +1,7 @@
 import { Flight } from './../entities';
 import { HttpService } from '../services/http-service';
 import { Component, OnInit } from '@angular/core';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-flights',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class FlightsComponent implements OnInit {
 
   flights: Array<Flight>;
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, public dictionary: DictionaryService) { }
 
   ngOnInit() {
     this.getFlights();

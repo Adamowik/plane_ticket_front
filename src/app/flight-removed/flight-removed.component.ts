@@ -1,3 +1,4 @@
+import { DictionaryService } from './../services/dictionary.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightRemovedComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dictionary: DictionaryService) { }
 
   ngOnInit() {
   }

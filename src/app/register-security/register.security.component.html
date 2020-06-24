@@ -1,5 +1,5 @@
 <div *ngIf="isSignedUp; else signupForm">
-  Register completed
+  {{dictionary.registerCompleted}}
 </div>
 
 <ng-template #signupForm>
@@ -13,7 +13,7 @@
       [formControl]="usernameFormControl"
        [errorStateMatcher]="matcher" required>
       <mat-error *ngIf="usernameFormControl.hasError('required')">
-        Login demanded
+        {{dictionary.loginDemanded}}
       </mat-error>
     </mat-form-field>
     <br>
@@ -25,7 +25,7 @@
       [formControl]="nameFormControl"
        [errorStateMatcher]="matcher" required>
       <mat-error *ngIf="nameFormControl.hasError('required')">
-        Name demanded
+        {{dictionary.nameDemanded}}
       </mat-error>
     </mat-form-field>
     <br>
@@ -37,7 +37,7 @@
         [formControl]="surnameFormControl"
          [errorStateMatcher]="matcher" required>
          <mat-error *ngIf="surnameFormControl.hasError('required')">
-            Surname demanded
+            {{dictionary.surnameDemanded}}
           </mat-error>
       </mat-form-field>
     <br>
@@ -49,10 +49,10 @@
        matInput placeholder="{{dictionary.email}}" formControlName="email"
        [errorStateMatcher]="matcheremail" required>
        <mat-error *ngIf="emailFormGroup.get('email').hasError('email') && !emailFormGroup.get('email').hasError('required')">
-        Enter valid email
+        {{dictionary.enterValidEmail}}
       </mat-error>
       <mat-error *ngIf="emailFormGroup.get('email').hasError('required')">
-        Email demanded
+        {{dictionary.emailDemanded}}
       </mat-error>
     </mat-form-field>
   <br>
@@ -65,11 +65,11 @@
      matInput placeholder="{{dictionary.password}}" type="password" formControlName="password" required>
 
      <mat-error *ngIf="passwordFormGroup.hasError('required', 'password')">
-        Password demanded
+        {{dictionary.passwordDemanded}}
       </mat-error>
 
       <mat-error>
-          Password length
+          {{dictionary.passwordLength}}
         </mat-error>
 
   </mat-form-field>
@@ -81,7 +81,7 @@
        [errorStateMatcher]="matcherpass" required>
 
        <mat-error *ngIf="passwordFormGroup.hasError('notSame')">
-          Passwords not same
+          {{dictionary.passwordsNotSame}}
         </mat-error>
 
     </mat-form-field>
@@ -94,23 +94,23 @@
      matInput placeholder="{{dictionary.phoneNumber}}" [formControl]="phoneNumberFormControl"
      [errorStateMatcher]="matcher" required>
      <mat-error *ngIf="phoneNumberFormControl.hasError('minlength') || phoneNumberFormControl.hasError('maxlength') && !phoneFormControl.hasError('required')">
-      Enter valid phone number
+      {{dictionary.enterValidPhoneNumber}}
     </mat-error>
     <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
-      Phone number demanded
+      {{dictionary.phoneNumberDemanded}}
     </mat-error>
   </mat-form-field>
   <br>
   <br>
-  <mat-checkbox [formControl]="statuteFormControl" required>I agree</mat-checkbox>
+  <mat-checkbox [formControl]="statuteFormControl" required>{{dictionary.iAgree}}</mat-checkbox>
   <br>
   <br>
   <button mat-raised-button color="primary" [disabled]="passwordFormGroup.invalid || emailFormGroup.invalid || phoneNumberFormControl.invalid || nameFormControl.invalid || surnameFormControl.invalid
-  || statuteFormControl.invalid" (click)="onSubmit()">Register me</button>
+  || statuteFormControl.invalid" (click)="onSubmit()">{{dictionary.registerMe}}</button>
   <br>
   <div *ngIf="isSignUpFailed" class="alert alert-danger">
     <br>
-    Register failed
+    {{dictionary.registerFailed}}
   </div>
 </div>
   <div class="col">

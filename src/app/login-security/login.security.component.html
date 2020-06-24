@@ -1,5 +1,5 @@
 <div *ngIf="isLoggedIn; else loggedOut">
-  Logged as
+  {{dictionary.loggedAs}}
 </div>
 
 <ng-template #loggedOut>
@@ -16,7 +16,7 @@
           matInput placeholder="{{dictionary.username}}" [formControl]="loginFormControl"
           [errorStateMatcher]="matcher" required>
           <mat-error *ngIf="loginFormControl.hasError('required')">
-            Login demanded}}
+            {{dictionary.loginDemanded}}
           </mat-error>
         </mat-form-field>
         <br>
@@ -27,7 +27,7 @@
              matInput placeholder="{{dictionary.password}}" [formControl]="passwordFormControl"
              [errorStateMatcher]="matcher" required>
              <mat-error *ngIf="passwordFormControl.hasError('required')">
-              Password demanded
+              {{dictionary.passwordDemanded}}
             </mat-error>
           </mat-form-field>
           <br>
@@ -42,14 +42,14 @@
         <div class="container">
           <br>
             <div *ngIf="isLoginFailed" class="alert alert-danger">
-              Login error
+              {{dictionary.loginError}}
             </div>
           </div>
         <hr />
         <div class="container">
         <br>
-        <p>Dont have acc</p>
-        <button [routerLink]="['/signup']" mat-raised-button>Register me</button>
+        <p>{{dictionary.dontHaveAcc}}</p>
+        <button [routerLink]="['/signup']" mat-raised-button>{{dictionary.registerMe}}</button>
       </div>
 
 </ng-template>

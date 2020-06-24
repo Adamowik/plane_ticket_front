@@ -1,8 +1,8 @@
 <mat-toolbar class="top-toolbar">
     <mat-toolbar-row>
-        <button mat-button class="span-menu" [routerLink]="['./editprofil']">Edit profile</button>
+        <button mat-button class="span-menu" [routerLink]="['./editprofil']">{{dictionary.editProfile}}</button>
         <mat-icon class="top-icon" [routerLink]="['./editprofil']">settings</mat-icon>
-      <button mat-button class="span-menu" [routerLink]="['./showtickets']">Show tickets</button>
+      <button mat-button class="span-menu" [routerLink]="['./showtickets']">{{dictionary.showTickets}}</button>
       <mat-icon class="top-icon" [routerLink]="['./showtickets']">search</mat-icon>
     </mat-toolbar-row>
     </mat-toolbar>
@@ -12,27 +12,27 @@
   <br>
   <table style="width: 100%; height: 3em" mat-table class="mat-elevation-z12">
         <tr>
-            <th>Username:</th>
+            <th>{{dictionary.username}}:</th>
             <br>
             <td>{{userService.getUser().username}}</td>
           </tr>
      <tr>
-       <th>Name:</th>
+       <th>{{dictionary.name}}:</th>
        <br>
        <td>{{userService.getUser().name}}</td>
      </tr>
      <tr>
-       <th>Surname:</th>
+       <th>{{dictionary.surname}}:</th>
        <br>
        <td>{{userService.getUser().surname}}</td>
      </tr>
      <tr>
-       <th>Email:</th>
+       <th>{{dictionary.email}}:</th>
        <br>
        <td>{{userService.getUser().email}}</td>
      </tr>
      <tr>
-       <th>Phone Number:</th>
+       <th>{{dictionary.phoneNumber}}:</th>
        <br>
        <td>{{userService.getUser().phoneNumber}}</td>
      </tr>

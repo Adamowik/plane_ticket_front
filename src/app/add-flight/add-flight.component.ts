@@ -2,6 +2,7 @@ import { FormControl } from '@angular/forms';
 import { HttpService } from './../services/http-service';
 import { Plane, Flight, Connections, Airport } from './../entities';
 import { Component, OnInit } from '@angular/core';
+import { DictionaryService } from '../services/dictionary.service';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -37,7 +38,7 @@ export class AddFlightComponent implements OnInit {
 
   clicked: boolean;
 
-  constructor(private httpService: HttpService) { }
+  constructor(public dictionary: DictionaryService, private httpService: HttpService) { }
 
   ngOnInit() {
     this.clicked = false;
