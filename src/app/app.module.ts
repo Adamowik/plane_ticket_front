@@ -29,6 +29,8 @@ import { BuyingFormComponent } from './buying-form/buying-form.component';
 import { ProfilComponent } from './profil/profil.component';
 import { GuestViewPlacesComponent } from './guest-view-places/guest-view-places.component';
 import { InsuranceComponent } from './insurance/insurance.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentRealisedComponent } from './payment-realised/payment-realised.component';
 import { FlightSearchResultComponent } from './flight-search-result/flight-search-result.component';
 import { ProfilEditComponent } from './profil-edit/profil-edit.component';
 import { TicketsComponent } from './tickets/tickets.component';
@@ -45,6 +47,7 @@ import { PlanesComponent } from './planes/planes.component';
 import { AddFlightComponent } from './add-flight/add-flight.component';
 import { FlightRemovedComponent } from './flight-removed/flight-removed.component';
 import { FlightAddedComponent } from './flight-added/flight-added.component';
+import { PayuComponent } from './payu/payu.component';
 
 
 @NgModule({
@@ -60,6 +63,8 @@ import { FlightAddedComponent } from './flight-added/flight-added.component';
     ProfilComponent,
     GuestViewPlacesComponent,
     InsuranceComponent,
+    PaymentComponent,
+    PaymentRealisedComponent,
     FlightSearchResultComponent,
     ProfilEditComponent,
     TicketsComponent,
@@ -70,6 +75,7 @@ import { FlightAddedComponent } from './flight-added/flight-added.component';
     AddFlightComponent,
     FlightRemovedComponent,
     FlightAddedComponent,
+    PayuComponent
   ],
   imports: [
     BrowserModule,

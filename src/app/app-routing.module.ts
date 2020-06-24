@@ -7,6 +7,7 @@ import { LoginSecurityComponent } from './login-security/login.security.componen
 import { RegisterSecurityComponent } from './register-security/register.security.component';
 import { ProfilEditComponent } from './profil-edit/profil-edit.component';
 import { FlightSearchResultComponent } from './flight-search-result/flight-search-result.component';
+import { PaymentRealisedComponent } from './payment-realised/payment-realised.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { GuestViewPlacesComponent } from './guest-view-places/guest-view-places.component';
 import { BuyingFormComponent } from './buying-form/buying-form.component';
@@ -20,7 +21,9 @@ import { AdminComponent } from './admin/admin.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfilComponent } from './profil/profil.component';
+import { PaymentComponent } from './payment/payment.component';
 import { TicketsComponent } from './tickets/tickets.component';
+import { PayuComponent } from './payu/payu.component';
 
 const routes: Routes = [  {
     path: '',
@@ -36,6 +39,18 @@ const routes: Routes = [  {
       component: FlightSearchResultComponent
     }
   ]
+},
+{
+  path: 'paymentrealised',
+  component: PaymentRealisedComponent
+},
+{
+  path: 'payment',
+  component: PaymentComponent,
+},
+{
+  path: 'payment/paymentdetails',
+  component: PayuComponent
 },
 {
   path: 'insurance',
