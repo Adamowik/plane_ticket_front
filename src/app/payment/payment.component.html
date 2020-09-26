@@ -12,8 +12,8 @@
     <mat-list-item>{{dictionary.sum}}: {{this.flightSearchService.paymentSum}}</mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item><button mat-raised-button color="primary" style="text-align: center"
-       (click)="flightSearchService.addTickets()" (click)="this.flightSearchService.makePlacesReserved()" (click)="this.flightSearchService.clearArrays()"
-      [routerLink]="['./paymentdetails']">{{dictionary.pay}}</button></mat-list-item>
+       (click)="createPayment()"
+      ></button>{{dictionary.pay}}</button></mat-list-item>
   </mat-list>
 </mat-card>
 
