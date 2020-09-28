@@ -1,1 +1,12 @@
-<agm-map></agm-map>
+<div class="container">
+    <button (click)="refreshClick()">Refresh</button>
+</div>
+<div class="map">
+    <agm-map [latitude]="lat" [longitude]="lng" [disableDefaultUI]="false">
+        <agm-marker *ngFor="let plane of planes" [latitude]="plane.lat" [longitude]="plane.lng" [iconUrl]="iconUrl">
+            <agm-info-window>
+                <span style="color:black; font-weight: bold;">Plane number: {{plane.planeId}}</span>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</div>

@@ -106,5 +106,9 @@ export class HttpService {
     return this.http.delete<Flight>('http://localhost:8080/flights/' + flight.flightID);
   }
 
+  getCoordinates() {
+    return this.http.get<Coordinates>('http://localhost:8080/map/');
+  }
+
 
   }

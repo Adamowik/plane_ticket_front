@@ -24,6 +24,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { PaymentComponent } from './payment/payment.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { PayuComponent } from './payu/payu.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [  {
     path: '',
@@ -56,6 +57,10 @@ const routes: Routes = [  {
   path: 'insurance',
   component: InsuranceComponent
 },
+// {
+//   path: 'map',
+//   component: MapComponent
+// },
 {
   path: 'guestview',
   component: GuestViewPlacesComponent

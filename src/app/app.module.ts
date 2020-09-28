@@ -55,6 +55,8 @@ import { AngularFireModule } from '@angular/fire';
 import { MessagingService } from './services/messaging.service';
 import { environment } from '../environments/environment';
 import { AsyncPipe } from '../../node_modules/@angular/common';
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import { AsyncPipe } from '../../node_modules/@angular/common';
     FlightRemovedComponent,
     FlightAddedComponent,
     PayuComponent
+    // ,MapComponent
   ],
   imports: [
     BrowserModule,
@@ -112,6 +115,9 @@ import { AsyncPipe } from '../../node_modules/@angular/common';
     AngularFireAuthModule,
     AngularFireMessagingModule,
     AngularFireModule.initializeApp(environment.firebase)
+    // ,AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyBTxVO8hHyb1wRwNIFAgS_JYLolrPli_nM'
+    // }),
   ],
   providers: [
     HttpService, MatDatepickerModule, MatNativeDateModule, FlightSearchService, DatePipe, httpInterceptorProviders,MessagingService, AsyncPipe,

@@ -3,6 +3,12 @@ export interface Airport {
   airportName: string;
   }
 
+export interface Coordinates {
+  planeID: number;
+  latitude: number;
+  longitude: number;
+}
+
 export interface Connections {
   connectionID?: number;
   flightTime: string;
