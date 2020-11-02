@@ -57,10 +57,10 @@ const routes: Routes = [  {
   path: 'insurance',
   component: InsuranceComponent
 },
-// {
-//   path: 'map',
-//   component: MapComponent
-// },
+{
+  path: 'map',
+  component: MapComponent
+},
 {
   path: 'guestview',
   component: GuestViewPlacesComponent

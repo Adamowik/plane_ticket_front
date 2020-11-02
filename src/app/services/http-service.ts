@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { Airport, Connections, Flight, Plane, Ticket, Users, Seats } from '../entities';
+import { Airport, Connections, Flight, Plane, Ticket, Users, Seats, PlaneCoordinates } from '../entities';
 
 @Injectable({
   providedIn: 'root'
@@ -107,7 +107,7 @@ export class HttpService {
   }
 
   getCoordinates() {
-    return this.http.get<Coordinates>('http://localhost:8080/map/');
+    return this.http.get<Array<PlaneCoordinates>>('http://localhost:8080/map/');
   }
 
 

@@ -12,7 +12,8 @@ import { UsersComponent } from './users/users.component';
 import { FlightsComponent } from './flights/flights.component';
 import { ConnectionsComponent } from './connections/connections.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatFormFieldModule} from '@angular/material';
+import { MatButtonModule} from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
@@ -20,7 +21,6 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatNativeDateModule} from '@angular/material';
 import { FlightSearchingComponent } from './flight-searching/flight-searching.component';
 import { ChoosePlaceComponent } from './choose-place/choose-place.component';
 import { DatePipe } from '@angular/common';
@@ -57,6 +57,9 @@ import { environment } from '../environments/environment';
 import { AsyncPipe } from '../../node_modules/@angular/common';
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule, MatPseudoCheckboxModule } from '@angular/material/core';
+import { WebSocketAPI } from './websocket/WebSocketAPI';
 
 @NgModule({
   declarations: [
@@ -83,17 +86,17 @@ import { AgmCoreModule } from '@agm/core';
     AddFlightComponent,
     FlightRemovedComponent,
     FlightAddedComponent,
-    PayuComponent
-    // ,MapComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
+    PayuComponent,
+    MapComponent
+    ],
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule,
+    MatPseudoCheckboxModule,
     MatFormFieldModule,
     MatAutocompleteModule,
     MatDatepickerModule,
@@ -114,14 +117,14 @@ import { AgmCoreModule } from '@agm/core';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireMessagingModule,
-    AngularFireModule.initializeApp(environment.firebase)
-    // ,AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyBTxVO8hHyb1wRwNIFAgS_JYLolrPli_nM'
-    // }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBTxVO8hHyb1wRwNIFAgS_JYLolrPli_nM'
+    }),
   ],
   providers: [
     HttpService, MatDatepickerModule, MatNativeDateModule, FlightSearchService, DatePipe, httpInterceptorProviders,MessagingService, AsyncPipe,
-     UserSecurityService],
+     UserSecurityService,WebSocketAPI],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

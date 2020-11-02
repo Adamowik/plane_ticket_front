@@ -3,7 +3,7 @@ export interface Airport {
   airportName: string;
   }
 
-export interface Coordinates {
+export interface PlaneCoordinates {
   planeID: number;
   latitude: number;
   longitude: number;

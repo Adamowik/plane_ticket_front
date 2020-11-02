@@ -101,7 +101,7 @@ export class FlightSearchService {
   addToChosenSeats(seat: Seats) {
     this.chosenSeats.push(seat);
   }
-
+ 
   setSeatOccuped(seat: Seats) {
     seat.free = false;
   }

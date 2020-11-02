@@ -3,7 +3,7 @@
 </div>
 <div class="map">
     <agm-map [latitude]="lat" [longitude]="lng" [disableDefaultUI]="false">
-        <agm-marker *ngFor="let plane of planes" [latitude]="plane.lat" [longitude]="plane.lng" [iconUrl]="iconUrl">
+        <agm-marker *ngFor="let plane of planes" [latitude]="plane.latitude" [longitude]="plane.longitude" [iconUrl]="iconUrl">
             <agm-info-window>
                 <span style="color:black; font-weight: bold;">Plane number: {{plane.planeId}}</span>
             </agm-info-window>

@@ -28,6 +28,7 @@
        <mat-icon class="top-icon" (click)="this.flightSearchService.clearArrays()" [routerLink]="['/search']" title="Wyszukaj lot">search</mat-icon>
        <button mat-button class="span-menu" [routerLink]="['/insurance']">{{dictionary.insurance}}</button>
        <mat-icon class="top-icon" [routerLink]="['/insurance']" title="Ubezpieczenie">local_hospital</mat-icon>
+       <button mat-button class="span-menu" [routerLink]="['/map']">Map</button>
 
        <ng-container *ngIf="userService.user!==undefined">
        <span class="spacer"></span>
